@@ -1,0 +1,387 @@
+@import "base/variables";
+
+.back-black {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.301);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.sign-in-form,
+.sign-up-form,
+.add-post-form,
+.edit-post-form {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  min-width: 450px;
+  min-height: 310px;
+  width: 40%;
+  height: 55%;
+  background-color: white;
+  border: 1px solid gray;
+  border-radius: 5px;
+
+  form {
+    width: 100%;
+    height: 100%;
+  }
+  &__block1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 20%;
+    border-bottom: 1px solid lightgray;
+    padding: 0 20px;
+    &__header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .btn-close-x {
+      background: none;
+      border: none;
+    }
+  }
+  &__block2 {
+    height: 60%;
+    padding: 20px;
+    border-bottom: 1px solid lightgray;
+  }
+  &__block3 {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 20px;
+    width: 100%;
+    height: 20%;
+    &__btn-close,
+    &__btn-submit {
+      color: white;
+    }
+    &__btn-close {
+      background-color: $gray;
+      &:hover {
+        background-color: $grayHover;
+      }
+    }
+    &__btn-submit {
+      background-color: $green;
+      &:hover {
+        background-color: $greenHover;
+      }
+    }
+  }
+}
+.sign-up-form {
+  height: 67%;
+  &__block1 {
+    height: 15%;
+  }
+  &__block2 {
+    height: 70%;
+  }
+  &__block3 {
+    height: 15%;
+    &__btn-submit {
+      background-color: $singUpBlue;
+    }
+  }
+}
+.add-post-form,
+.edit-post-form {
+  min-height: 310px;
+  width: 40%;
+  height: 72%;
+  &__block1 {
+    width: 100%;
+    height: 15%;
+  }
+  &__block2 {
+    width: 100%;
+    height: 70%;
+    .textarea {
+      border-radius: 5px;
+      height: 150px;
+      resize: none;
+      border: 1px solid $lightgray;
+    }
+  }
+  &__block3 {
+    width: 100%;
+    height: 15%;
+    &__btn-post {
+      background-color: $green;
+      color: white;
+      &:hover {
+        background-color: $greenHover;
+        border: none;
+        margin-right: 2px;
+      }
+    }
+  }
+}
+.header {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  min-height: 60px;
+  height: 10vh;
+  background-color: black;
+  &__name {
+    margin-left: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    min-width: max-content;
+    width: 10%;
+    color: white;
+    font-size: 24px;
+  }
+  &__action-block {
+    display: block;
+    width: max-content;
+    padding-right: 2%;
+    .sign-in {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-around;
+      align-items: center;
+      width: max-content;
+      height: 100%;
+      .btn-sign-in,
+      .btn-sign-up {
+        display: block;
+        width: 80px;
+        height: 40px;
+        background: none;
+        font-size: 14px;
+        cursor: pointer;
+      }
+      .btn-sign-in {
+        border-radius: 7px 0 0 7px;
+        border: 2px solid $singInGreen;
+        color: $singInGreen;
+        &:hover {
+          background-color: $singInGreen;
+          color: white;
+          text-shadow: 1px 1px 4px black;
+        }
+        &:active {
+          box-shadow: 0px 0px 7px 1px $singInGreen;
+          background: none;
+          color: $singInGreen;
+        }
+      }
+      .btn-sign-up {
+        border-radius: 0 7px 7px 0;
+        border: 2px solid $singUpBlue;
+        color: $singUpBlue;
+        &:hover {
+          background-color: $singUpBlue;
+          color: white;
+          text-shadow: 1px 1px 4px black;
+        }
+        &:active {
+          box-shadow: 0px 0px 7px 1px $singUpBlue;
+          background: none;
+          color: $singUpBlue;
+        }
+      }
+    }
+    .sign-out {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-around;
+      align-items: center;
+      width: max-content;
+      height: 100%;
+      .btn-add-post,
+      .btn-sign-out {
+        display: block;
+        width: 80px;
+        height: 40px;
+        background: none;
+        font-size: 14px;
+        cursor: pointer;
+      }
+      &__user-name {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 7px 0 7px;
+        min-width: 80px;
+        width: fit-content;
+        height: 40px;
+        font-weight: bold;
+        background-color: $orange;
+        cursor: default;
+      }
+      .btn-add-post {
+        border-radius: 7px 0 0 7px;
+        border: 2px solid $singInGreen;
+        color: $singInGreen;
+        &:hover {
+          background-color: $singInGreen;
+          color: white;
+          text-shadow: 1px 1px 4px black;
+        }
+        &:active {
+          box-shadow: 0px 0px 7px 1px $singInGreen;
+          background: none;
+          color: $singInGreen;
+        }
+      }
+      .btn-sign-out {
+        border-radius: 0 7px 7px 0;
+        border: 2px solid $orange;
+        color: $orange;
+
+        &:hover {
+          background-color: $orange;
+          color: white;
+          text-shadow: 1px 1px 4px black;
+        }
+
+        &:active {
+          box-shadow: 0px 0px 7px 1px $orange;
+          background: none;
+          color: $orange;
+        }
+      }
+    }
+  }
+}
+.main-block {
+  display: flex;
+  flex-flow: column;
+  justify-content: start;
+  align-items: center;
+  width: 100vw;
+  height: 90vh;
+  overflow-y: auto;
+  &__post {
+    display: flex;
+    flex-flow: row;
+    width: 80%;
+    min-height: 150px;
+    height: max-content;
+    border-radius: 5px;
+    border: 1px solid grey;
+    margin: 1% 0 1% 0;
+    .all-info {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: flex-start;
+      align-items: flex-start;
+      width: 75%;
+      height: 100%;
+      padding: 10px;
+      &__title,
+      &__posted-by,
+      &__text {
+        display: block;
+        width: 100%;
+        height: 10%;
+        margin: 10px;
+      }
+      &__posted-by {
+        color: $lightgray;
+        font-size: 14.5px;
+      }
+      &__text {
+        font-weight: normal;
+        height: max-content;
+      }
+    }
+  }
+  .action-box {
+    display: flex;
+    flex-flow: column;
+    width: 25%;
+    height: 100%;
+    &__time {
+      display: flex;
+      flex-flow: row;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 55%;
+      &__img {
+        display: block;
+        width: 15px;
+        height: 15px;
+        background-image: url(../../assets/images/clock.svg);
+        background-repeat: no-repeat;
+        margin-right: 4px;
+      }
+      &__time-date {
+        display: block;
+        width: max-content;
+        height: 15px;
+        font-size: 13.5px;
+        color: $lightgray;
+      }
+    }
+    &__buttons {
+      display: flex;
+      flex-flow: row;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 45%;
+      .btn-edit,
+      .btn-delete {
+        display: block;
+        width: 80px;
+        height: 30px;
+        background: none;
+        font-size: 14px;
+        cursor: pointer;
+      }
+      .btn-edit {
+        width: 50px;
+        border-radius: 7px 0 0 7px;
+        border: none;
+        background-color: $orange;
+        &:hover {
+          background-color: $orangeHover;
+        }
+        &:active {
+          outline: 2px solid $orangeActive;
+          background-color: $orange;
+        }
+      }
+
+      .btn-delete {
+        border-radius: 0 7px 7px 0;
+        border: none;
+        background-color: $redone;
+        color: white;
+        &:hover {
+          background-color: $redoneHover;
+        }
+
+        &:active {
+          outline: 2px solid $redoneActive;
+          background-color: $redone;
+        }
+      }
+    }
+  }
+  .h100 {
+    height: 100%;
+  }
+}
